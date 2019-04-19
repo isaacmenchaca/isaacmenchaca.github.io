@@ -1,7 +1,7 @@
-title:             My wonderful website that I built myself
-email:             your-email@example.com
+title:             Gokh Amin Alshaif
+email:             galshaif@ucsb.edu
 description:       Insert clever description here
-author:            Your name
+author:            Gokh Amin Alshaif
 baseurl:           "" # Leave this alone if this is your main site (i.e. username.github.io). If instead this is a site for a project, e.g. username.github.io/
 url:               "http://username.github.io" # or http://username.github.io/mycleverproject if it is a project site, or http://mylovelydomainname.com if you have a domain, and so on.
 
