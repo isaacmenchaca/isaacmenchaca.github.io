@@ -7,13 +7,17 @@
 // Below you can add bits of CSS to override the default settings. I've included a couple to get you started. Just remove the "//" from the beginning of each line to activate it, and refresh your browser. For more information on CSS and how to use it, see https://www.w3schools.com/css/.
 
 // To change the fonts for the headings across the site:
-h1, h2, h3, h4, h5 {
-//    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-//    font-size: 100px;
-//    color: #4CAF50
+// h1, h2, h3, h4, h5 {
+//    font-family: "Garamond", Arial, Helvetica, sans-serif;
+//   font-size: 100px;
+//   color: #4CAF50
 }
-
-// If you would like to switch off an entire section of CSS, you can also place /* and */ at each end of a block, like this:
+//THIS IS COBO ORIGINAL CODE
+h1, h2, h3, h4, h5 {
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 100px;
+   color: #4CAF50
+}// If you would like to switch off an entire section of CSS, you can also place /* and */ at each end of a block, like this:
 
 
 // To change the fonts for the main site title:
