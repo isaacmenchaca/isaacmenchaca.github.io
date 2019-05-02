@@ -11,11 +11,16 @@
 //    font-family: "Garamond", Arial, Helvetica, sans-serif;
 //   font-size: 100px;
 //   color: #4CAF50
-
 // If you would like to switch off an entire section of CSS, you can also place /* and */ at each end of a block, like this:
 
 
 // To change the fonts for the main site title:
+//THIS IS WHAT CODE LOOKED LIKE BEFORE CHANGES
+//header.masthead .page-heading h1, header.masthead .site-heading h1 {
+  //  font-family: Garamond, Times, serif;
+    //font-weight: bold;
+    //font-style: normal;
+//}
 
 header.masthead .page-heading h1, header.masthead .site-heading h1 {
     font-family: Garamond, Times, serif;
