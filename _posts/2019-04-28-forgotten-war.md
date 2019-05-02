@@ -4,7 +4,7 @@ title:  "The Forgotten War"
 subtitle: "Violence, Famine, and Humanitarian Catastrophe in Yemen"
 date:   2019-04-28 17:30:13 -0400
 author: #"Juan Cobo" # you can get rid of this entire line in your own blog posts, and the page will display the name of the site's owner, taken from the _config.yml file.
-background: '/img/posts/01.jpg' # notice how the image referenced is in your project's /img/posts/ folder.
+background: '/img/war.jpg' # notice how the image referenced is in your project's /img/posts/ folder.
 ---
 
 
