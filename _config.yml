@@ -11,7 +11,7 @@ collections:
     permalink: /:name
   updates:
     output: true
-    permalink: /:name
+    permalink: /updates/:name
 
 # Social Profiles
 twitter_username:
