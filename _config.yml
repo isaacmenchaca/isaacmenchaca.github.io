@@ -9,6 +9,9 @@ collections:
   pages:
     output: true
     permalink: /:name
+  updates:
+    output: true
+    permalink: /:name
 
 # Social Profiles
 twitter_username:

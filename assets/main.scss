@@ -8,9 +8,11 @@
 
 // To change the fonts for the headings across the site:
 // h1, h2, h3, h4, h5 {
-//    font-family: "Garamond", Arial, Helvetica, sans-serif;
-//   font-size: 100px;
-//   color: #4CAF50
+  //  font-family: "Garamond", Arial, Helvetica, sans-serif;
+ //font-size: 100px;
+  //color: #4CAF50
+
+//}
 // If you would like to switch off an entire section of CSS, you can also place /* and */ at each end of a block, like this:
 
 
@@ -77,3 +79,22 @@ table th {
 */
 
 // To see what the above does to tables, just remove those bits.
+
+h1 {
+  font-family: Garamond, serif;
+}
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-family: Garamond, Times, serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+ h1, h2, h3, h4, h5 {
+   font-family: "Garamond", Arial, Helvetica, sans-serif;
+//font-size: 100px;
+ //color: #4CAF50
+
+}
