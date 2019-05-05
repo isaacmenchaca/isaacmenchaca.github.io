@@ -7,32 +7,38 @@
 // Below you can add bits of CSS to override the default settings. I've included a couple to get you started. Just remove the "//" from the beginning of each line to activate it, and refresh your browser. For more information on CSS and how to use it, see https://www.w3schools.com/css/.
 
 // To change the fonts for the headings across the site:
-h1, h2, h3, h4, h5 {
-//    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-//    font-size: 100px;
-//    color: #4CAF50
-}
+// h1, h2, h3, h4, h5 {
+  //  font-family: "Garamond", Arial, Helvetica, sans-serif;
+ //font-size: 100px;
+  //color: #4CAF50
 
+//}
 // If you would like to switch off an entire section of CSS, you can also place /* and */ at each end of a block, like this:
 
 
 // To change the fonts for the main site title:
-/*
+//THIS IS WHAT CODE LOOKED LIKE BEFORE CHANGES
+//header.masthead .page-heading h1, header.masthead .site-heading h1 {
+  //  font-family: Garamond, Times, serif;
+    //font-weight: bold;
+    //font-style: normal;
+//}
+
 header.masthead .page-heading h1, header.masthead .site-heading h1 {
-    font-family: Palatino, Times, serif;
-    font-weight: normal;
-    font-style: italic;
+    font-family: Garamond, Times, serif;
+    font-weight: bold;
+    font-style: normal;
 }
-*/
+
 
 // To change the fonts for the main site navigation bar:
-/*
+
 #mainNav .navbar-brand {
-    font-family: Palatino, Times, serif;
+    font-family: Garamond, Garamond, Garamond;
     font-weight: normal;
     font-style: normal;
 }
-*/
+
 
 // To customise the navigation bar links:
 /*
@@ -73,3 +79,22 @@ table th {
 */
 
 // To see what the above does to tables, just remove those bits.
+
+h1 {
+  font-family: Garamond, serif;
+}
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-family: Garamond, Times, serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+ h1, h2, h3, h4, h5 {
+   font-family: "Garamond", Arial, Helvetica, sans-serif;
+//font-size: 100px;
+ //color: #4CAF50
+
+}
