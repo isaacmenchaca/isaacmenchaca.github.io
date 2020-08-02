@@ -15,7 +15,7 @@ My domains of interest consists of data science, machine learning/ AI, biosignal
 
 My overall, long-term goal is to continue working on projects to better understand and improve underlying health issues via the power of data.
 
-Besides research and skill-building, I like reading, soccer (Juventus fan), keeping up with modern music, and giving guidance to the youth of my community.
+Besides research and skill-building, I like reading, soccer (Juventus fan), photography, keeping up with modern music, and giving guidance to the youth of my community.
 
 Feel free to message about any questions, or to discuss similar interests. :)
 
