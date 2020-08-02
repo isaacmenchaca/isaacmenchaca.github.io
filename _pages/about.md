@@ -13,7 +13,7 @@ I am currently involved with Dr. Megan Peters's Cognitive and Neural Computation
 
 My domains of interest consists of data science, machine learning/ AI, biosignals, and cognitive neuroscience. My current goal is to extract information from neuroimaging data via machine learning to better understand metacognition in neurotypical individuals and those with cognitive disabilities.
 
-My overall, long-term goal is to continue working on projects to better understand and improve underlying health issues via the power of data.
+My overall, long-term goal is to continue working on projects to better understand and improve underlying health issues via the power of big data.
 
 Besides research and skill-building, I like reading, soccer (Juventus fan), photography, keeping up with modern music, and giving guidance to the youth of my community.
 
