@@ -1,6 +1,6 @@
 # Welcome to your new History 295LA website
 
-I have adapted the ["Clean Blog Jekyll Theme" by Start Bootstrap](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll) to help you get to grips with Jekyll and GitHub pages in this class, and to give you a head start developing your personal websites and projects. [Bootstrap](https://getbootstrap.com/) is an open source toolkit for developing websites, originally started by some people at Twitter.
+I have adapted the ["Clean Blog Jekyll Theme" by Start Bootstrap](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll) to help you get to grips with Jekyll and GitHub pages, and to give you a head start developing your personal websites and projects. [Bootstrap](https://getbootstrap.com/) is an open source toolkit for developing websites.
 
 ## To start:
 1. Fork this repository and rename it `[yourusername].github.io`. If you have a repository with that name left over from the last class, get rid of it or rename it first.
