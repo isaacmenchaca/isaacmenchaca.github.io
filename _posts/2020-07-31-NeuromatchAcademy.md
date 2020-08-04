@@ -21,7 +21,7 @@ The dataset contains fMRI data for human subjects viewing grayscale naturalistic
 <div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic">Figure 1. Example of grayscale naturalistic images from the Kay-Gallant dataset.</span></div>
 
 <img src="/img/posts/post1images/NMAimage2.png" style="display: block; width:350px; height:200px; margin-right: auto; margin-left: auto;"/>
-<div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;">Figure 2. Response amplitudes of voxels to a corresponding image.</span></div>
+<div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;">Figure 2. Response amplitudes of voxels to corresponding images.</span></div>
 
 ---
 
@@ -69,25 +69,31 @@ In attempt to improve model performance, the linear models with regularization u
 
 We made predictions using the test set on the Lasso (L1 &alpha; = 10) and Ridge (L2 &alpha; = 600) regression models. The predictions it made were relatively similar for both V1 and V4, and on some images it seemed as if there was promise in what the models were predicting; however, when looking at the entire range of predictions there was bias towards low saturations -- meaning it was unlikely that the models were sampling the entire color space.
 
-To test whether our regressions were catching real differences in color or just guiding the results towards low-saturation values, we shuffled the mappings between our test images and their paired voxel activation patterns, then attempted to predict the dominant color of the randomly-paired image. We repeated this shuffling 1,000 times to create a distribution of the RMSE values. Sure enough, our RMSE from the actual test set fell well within the 95% confidence intervals of this distribution, which indicates that we did not accurately predict images’ dominant colors from their associated voxel activations in either V4 or V1 (Fig. 9).
+To test whether our regressions were catching real differences in color or just guiding the results towards low-saturation values, we shuffled the mappings between our test images and their paired voxel activation patterns, then attempted to predict the dominant color of the randomly-paired image. We repeated this shuffling 1,000 times to create a distribution of the RMSE values. Sure enough, our RMSE from the actual test set fell well within the 95% confidence intervals of this distribution, which indicates that we did not accurately predict images’ dominant colors from their associated voxel activations in either V4 or V1 (Fig. 9A). If you take a look at the colors we predicted for the high-saturation image of raspberries and the low-saturation of the starfish, you can clearly see this bias in action (Fig. 9B). Although the starfish seems to have been predicted close to the dominant color, when looking at the image of the rasberries you can see the model is predicting it to be a low-saturation color; in fact its prediction looks similar to that of the starfish image. Both the default Lasso and the hyper-parameter tuned Ridge models had this bias.
 
 <img src="/img/posts/post1images/NMAimage9.png" style="display: block; width:450px; height:200px; margin-right: auto; margin-left: auto;"/>
-<div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;">Figure 7. </span></div>
+<img src="/img/posts/post1images/NMAimage10.png" style="display: block; width:450px; height:250px; margin-right: auto; margin-left: auto;"/>
+<div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;">Figure 7.  Testing color bias with bootstrap RMSE values of predicted dominant color of randomly-paired images with 95 % conf. interval (A). Demonstrating the bias for low-saturation images demonstrated from bootstrap RMSE values in Lasso models for V1 and V4 (B). </span></div>
+
+It turns out while inspecting the predictions, there indeed was a bias, or more so, the data was so complex that the models' regularizations geared towards the mean of the values. This makes more sense, since having a high L2 &alpha; regularization leaves weights very close to zero, which explains a flat line going through the data's mean in the tuned Ridge models (the representational area of low saturated color). A high L1 &alpha will also have this effect in the Lasso models, leaving many coefficient weights to zero and increasing sparsity. Overall, a high regularization decreases the variance while it increases the bias, leading to underfitting models that make predictions close to the baseline.
 
 
+---
 
+#### Future Directions and Final Thoughts
 
+In this dataset, we obtained many images with mixed color content that produced uncertainty in the re-colorization process. For future experimentation, we suggest utilizing more images focused on strong canonical hue (e.g. yellow banana, red coke can) while labeling the true dominant color to avoid uncertainty with re-colorization. We also suggest taking into consideration simple and complex object shapes that are a part of the image. The motivation behind this idea is to not only observe if we can distinguish shapes from the images, but to also limit creating shape bias as well, such as observing horizontal lines due to bodies of water,  or vertical lines due to trees. Most importantly, due to the high measure of features and complexity of predicting color content from voxels, it is highly suggested a more complex model should be explored (such as a deep learning model) to decode the color representations from high dimensional features. In the end we were not able to effectively predict dominant color using our models, but it was interesting to understand why we most likely were not able to.
 
-<!-- besides those close from the baseline. -->
+Although it was not the goal we wanted to achieve, NMA introduced a foundation on how to approach a project: come up with a question, undergo literature review, observe which models to use, evaluate models with appropriate metrics, and repeat. NMA was a really enjoyable three week experience, learning new topics such as deep learning (on the very last days unfortunately) and collaborating on a project with new friends/ peers.
 
+Contributors to this project consisted of Kathryn O'Nell (University of Oxford), Czarinah Micah Rodriguez (UC Berkeley), Kevin Rusch (University of London), and myself, Isaac Menchaca (UC Riverside).
 
+#### Poster and Video for Neuromatch Academy
 
+<img src="/img/posts/post1images/NMAimage11.png" style="display: block; width:600px; height:400px; margin-right: auto; margin-left: auto;"/>
 
+<center><iframe width="600" height="400" src="https://www.youtube.com/embed/mwxZpMvGZuQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-
-
-
-TO DO: Update!! :)
 
 
 [^fn1]: Kay, K., Naselaris, T., Prenger, R. et al. Identifying natural images from human brain activity. Nature 452, 352–355 (2008). https://doi.org/10.1038/nature06713
