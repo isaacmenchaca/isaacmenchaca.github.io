@@ -86,7 +86,7 @@ In this dataset, we obtained many images with mixed color content that produced 
 
 Although it was not the goal we wanted to achieve, NMA introduced a foundation on how to approach a project: come up with a question, undergo literature review, observe which models to use, evaluate models with appropriate metrics, and repeat. NMA was a really enjoyable three week experience, learning new topics such as deep learning (on the very last days unfortunately) and collaborating on a project with new friends/ peers.
 
-Contributors to this project consisted of Kathryn O'Nell (University of Oxford), Czarinah Micah Rodriguez (UC Berkeley), Kevin Rusch (University of London), and myself, Isaac Menchaca (UC Riverside).
+Contributors to this project: Kathryn O'Nell (University of Oxford), Czarinah Micah Rodriguez (UC Berkeley), Kevin Rusch (University of London), and myself, Isaac Menchaca (UC Riverside).
 
 #### Poster and Video for Neuromatch Academy
 
