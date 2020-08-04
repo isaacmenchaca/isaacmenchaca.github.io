@@ -1,11 +1,14 @@
 ---
 layout: page
-title: Projects
+title: Technical Guidelines
+description: Procedures for research analysis. Updates coming soon! -- (8/4/2020)
 background: '/img/bg-post.jpg'
 ---
-{% assign custompages = site.posts | where: "methods", false %}
+
+{% assign custompages = site.posts | where: "methods", true %}
 
 {% for post in custompages %}
+
 <article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
     <h2 class="post-title">{{ post.title }}</h2>
@@ -26,6 +29,7 @@ background: '/img/bg-post.jpg'
 </article>
 
 <hr>
+
 {% endfor %}
 
 <!-- Pager -->
