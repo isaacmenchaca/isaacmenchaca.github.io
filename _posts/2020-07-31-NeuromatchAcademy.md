@@ -1,6 +1,6 @@
 ---
 layout: post # if this were a page, you would write "page" instead. They layouts are subtly different. Try it to see what happens.
-# set methods to true so it goes to methods section, otherwise if just to project section set to false 
+# set methods to true so it goes to methods section, otherwise if just to project section set to false
 methods: false
 title:  "Neuromatch Academy Project"
 subtitle: "Decoding Color Content from Neural Data and Multi-output Linear Models"
@@ -77,7 +77,7 @@ To test whether our regressions were catching real differences in color or just 
 <img src="/img/posts/post1images/NMAimage10.png" style="display: block; width:450px; height:250px; margin-right: auto; margin-left: auto;"/>
 <div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;">Figure 7.  Testing color bias with bootstrap RMSE values of predicted dominant color of randomly-paired images with 95 % conf. interval (A). Demonstrating the bias for low-saturation images demonstrated from bootstrap RMSE values in Lasso models for V1 and V4 (B). </span></div>
 
-It turns out while inspecting the predictions, there indeed was a bias, or more so, the data was so complex that the models' regularizations geared towards the mean of the values. This makes more sense, since having a high L2 &alpha; regularization leaves weights very close to zero, which explains a flat line going through the data's mean in the tuned Ridge models (the representational area of low saturated color). A high L1 &alpha will also have this effect in the Lasso models, leaving many coefficient weights to zero and increasing sparsity. Overall, a high regularization decreases the variance while it increases the bias, leading to underfitting models that make predictions close to the baseline.
+It turns out while inspecting the predictions, there indeed was a bias, or more so, the data was so complex that the models' regularizations geared towards the mean of the values. This makes more sense, since having a high L2 &alpha; regularization leaves weights very close to zero, which explains a flat line going through the data's mean in the tuned Ridge models (the representational area of low saturated color). A high L1 &alpha; will also have this effect in the Lasso models, leaving many coefficient weights to zero and increasing sparsity. Overall, a high regularization decreases the variance while it increases the bias, leading to underfitting models that make predictions close to the baseline.
 
 
 ---
