@@ -45,6 +45,20 @@ In most cases the toolbox will clean most of the data, but there may be instance
 <img src="/img/posts/post2images/pupilGIF2.gif" style="display: block; width:650px; height:500px; margin-right: auto; margin-left: auto;"/>
 <div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;"> Figure 3. Manually inspecting and cleaning data. After the run is fully cleaned, select <b>Save Changes and Exit</b>. </span></div>
 
+
+There are three functions to apply during this process:
+*   **Interpolate**: linearly interpolates over the select region.
+*   **Re-populate**: replaces the selected region with original (non-reconstructed) data.
+*   **NaN Data**: replaces the selected region with NaNs.
+
+Some hot keys to use during the manual inspection:
+*   **WASD**: arrow keys to navigate plot (AD: horizontal keys; SW: vertical keys)
+*   **Q**: select start point
+*   **E**: select end point
+*   **Z**: Interpolate
+*   **X**: Re-populate
+*   **C**: NaN Data
+
 Once done, you can repeat the entire cleaning process on all runs.
 
 ---
