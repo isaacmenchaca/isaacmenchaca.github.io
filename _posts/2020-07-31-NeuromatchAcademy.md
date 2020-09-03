@@ -96,8 +96,7 @@ Contributors to this project: Kathryn O'Nell (University of Oxford), Czarinah Mi
 
 <center><iframe width="600" height="400" src="https://www.youtube.com/embed/mwxZpMvGZuQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-
-
+---
 [^fn1]: Kay, K., Naselaris, T., Prenger, R. et al. Identifying natural images from human brain activity. Nature 452, 352–355 (2008). https://doi.org/10.1038/nature06713
 [^fn2]: Bannert, M. M., & Bartels, A. (2013). Decoding the Yellow of a Gray Banana. Current Biology, 23(22), 2268–2272. https://doi.org/10.1016/j.cub.2013.09.016
 [^fn3]: Bannert, M. M., & Bartels, A. (2018). Human V4 Activity Patterns Predict Behavioral Performance in Imagery of Object Color. Journal of Neuroscience, 38(15), 3657–3668. https://doi.org/10.1523/JNEUROSCI.2307-17.2018
