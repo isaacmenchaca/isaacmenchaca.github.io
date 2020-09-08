@@ -96,4 +96,4 @@ Hope this was useful!
 [^fn2]: Sara, Susan J. "The locus coeruleus and noradrenergic modulation of cognition." Nature reviews neuroscience 10.3 (2009): 211-223.
 [^fn3]: Guedj, Carole, et al. "Could LC-NE-dependent adjustment of neural gain drive functional brain network reorganization?." Neural plasticity 2017 (2017).
 [^fn4]: Murphy, Peter R., et al. "Pupil diameter covaries with BOLD activity in human locus coeruleus." Human brain mapping 35.8 (2014): 4140-4154.
-[^fn5]: Huang R. ET-remove-artifacts. GitHub; 2020. https://github.com/EmotionCognitionLab/ET-remove-artifacts
+[^fn5]: Huang R. ET-remove-artifacts. GitHub; 2020. <https://github.com/EmotionCognitionLab/ET-remove-artifacts>
