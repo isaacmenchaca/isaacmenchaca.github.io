@@ -9,9 +9,9 @@ author:  # you can get rid of this entire line in your own blog posts, and the p
 background: '/img/posts/06.jpg' # notice how the image referenced is in your project's /img/posts/ folder.
 ---
 
-Neuromatch Academy (NMA) was an amazing three-week experience that brought upon intellectual knowledge, a sense of community, and most importantly, my re-found curiosity in the analysis of neural data once again.
+Neuromatch Academy (NMA) brought upon intellectual knowledge, a sense of community, and most importantly, my re-found curiosity in the analysis of neural data once again.
 
-Along with all the greatness from NMA, I had the opportunity to work with other curious-driven individuals and explore a new perspective on the Kay-Gallant dataset[^fn1].
+In addition to the training from NMA, I had the opportunity to work with other curious-driven individuals and explore a new perspective on the Kay-Gallant dataset[^fn1].
 
 ---
 #### Dataset and NMA Project Question
