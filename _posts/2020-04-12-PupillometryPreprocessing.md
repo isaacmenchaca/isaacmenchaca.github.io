@@ -87,8 +87,6 @@ Once, again **saving periodically to a new .m file** will help with most issues.
 
 ---
 
-Note: In case of version capability for future reference, I cloned the version that was used and pushed the code here (put pushed version here).
-
 Hope this was useful!
 
 ---

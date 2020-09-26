@@ -66,17 +66,19 @@ The log-transform of the delta power magnitude enhanced our view of a sleep dept
 ---
 ####  Real-Time Functionality
 
-On the application, the app will allow the user to enter a time window of when they will like to be awakened. A time window of at least 30 minutes is required to determine when to wake the individual. If the system was not able to make a decision, which is determined by a threshold, it will wake the individual at the last second of the time window.
+On the application, the interface will allow the user to enter a time window of when they will like to be awakened (demonstrated in the video below). A time window of at least 30 minutes is required to determine when to wake the individual. If the system was not able to make a decision, which is determined by a threshold, it will wake the individual at the last second of the time window.
 
-Taking the rolling mean was only for the purpose of enhancing the view of the sleep depth changing over time. The power data in real-time retrieval did not start until there was enough points to undergo the first FFT. There was no zero padding or boundary extension in the application. We also took the absolute value of the log-transform so it is on a positive scale. In real-time, a threshold is used to distinguish the sleep depth. Above the threshold will be when to wake an individual and below the threshold will be when to not wake an individual. Since there is no rolling mean in the app, the wake decision is by majority power vote for every 5 minutes. If more power points are below the threshold for the majority of 5 minutes, the person will not be disturbed. Otherwise, the alarm will ring. The threshold shall not be relevant for the wake decision until the desired time window is reached.
+<img src="/img/posts/post5images/app.mov" style="display: block; width:200px; height:400px; margin-right: auto; margin-left: auto;"/>
+<div style="text-align:center"><span style="color:black; font-family:Computer Modern; font-size:1; font-style: italic;"> User Interface. Upon turning on the EEG device, the user enters a desired time window to wake up. The mobile EEG will then connect to the application via bluetooth, and the UI slider is used to indicate the preference of the system's wake-decision threshold strength.</span></div>
 
-The threshold will be an average from the top 50 and lowest 50 values to bypass real-time artifact influence. These values are collected from the data prior to the sleep window. There is a UI slider on the app to indicate how conservative or liberal the user wants the system to be in making a wake decision during the alarm window. Leaning towards conservative means making the threshold higher; this decision will ensure a user is awakened during light sleep, but it also carries the risk of making the decision at the last second of the time window if the threshold was not met. Leaning towards a liberal system makes the threshold lower, and a highly liberal system will risk possibly being awakened during SWS (Deep Sleep) during the time window.
+Taking the rolling mean in the pre-analysis was only for the purpose of enhancing the view of the sleep depth changing over time. The power in the real-time data collection did not start until there was enough points to undergo the first FFT. There was no zero padding or boundary extension in the application. We also took the absolute value of the log-transform so it is on a positive scale. In real-time, a threshold is used to distinguish the sleep depth. Above the threshold will be when to wake an individual and below the threshold will be when to not wake an individual. Since there is no rolling mean in the app, the wake decision is by majority power vote for every 5 minutes. If more power points are below the threshold for the majority of 5 minutes, the person will not be disturbed. Otherwise, the alarm will ring. The threshold shall not be relevant for the wake decision until the desired time window is reached.
+
+The threshold will be an average from the top 50 and lowest 50 values to bypass real-time artifact influence. These values are collected from the data prior to the sleep window. As seen on the video, there is a UI slider on the app to indicate how conservative or liberal the user wants the system to be in making a wake decision during the alarm window. Leaning towards conservative means making the threshold higher; this decision will ensure a user is awakened during light sleep, but it also carries the risk of making the decision at the last second of the time window if the threshold was not met. Leaning towards a liberal system makes the threshold lower, and a highly liberal system will risk possibly being awakened during SWS (Deep Sleep) during the time window.
 
 An example of the described system is as below, in rolling mean analysis form and in real-time form, respectively.
 
 <script src="https://gist.github.com/isaacmenchaca/15dc374f467017aeb52a9cdecb20ad80.js"></script>
 <img src="/img/posts/post5images/WR1image7.png" style="display: block; width:550px; height:350px; margin-right: auto; margin-left: auto;"/>
-
 
 ---
 #### Future Directions Ideas:
@@ -94,7 +96,7 @@ After building the model architecture, it was trained using Adam optimization. T
 <script src="https://gist.github.com/isaacmenchaca/827cbe515f17ae61ce55ae683d6aa17d.js"></script>
 <img src="/img/posts/post5images/WR1image10.png" style="display: block; width:550px; height:200px; margin-right: auto; margin-left: auto;"/>
 
-The model was then evaluated with a generated test dataset. Five instances of 50 data points were fed into the model to predict their next 10 data points. The following demonstrates the predictions in comparison to the actual data points.
+The model was then evaluated with a generated test dataset. Instances of 50 data points were fed into the model to predict their next 10 data points. The following demonstrates the predictions in comparison to the actual data points.
 
 <script src="https://gist.github.com/isaacmenchaca/3954dae5e16b928b4681b280035ec6c7.js"></script>
 <img src="/img/posts/post5images/WR1image11.png" style="display: block; width:550px; height:600px; margin-right: auto; margin-left: auto;"/>
