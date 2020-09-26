@@ -81,7 +81,7 @@ An example of the described system is as below, in rolling mean analysis form an
 <img src="/img/posts/post5images/WR1image7.png" style="display: block; width:550px; height:350px; margin-right: auto; margin-left: auto;"/>
 
 ---
-#### Future Directions Ideas:
+#### Future Direction Ideas:
 
 Along with the threshold, there should be an attempt to predict future values to find the most optimal time to wake up during the sleep window. This will also allow the system to make the decision to wake someone earlier rather than later if necessary. A suggested way to do this is with a Deep Learning model with a Recurrent Neural Network (RNN) architecture. A time series is input into the model, and in return a series of predicted future values will be the output. The downside is it may require many sleep trials for a single user to train the model, as sleep cycles are different per person, but if done correctly it can be effective in avoiding sleep inerta/ morning grogginess.
 
@@ -102,7 +102,7 @@ The model was then evaluated with a generated test dataset. Instances of 50 data
 <img src="/img/posts/post5images/WR1image11.png" style="display: block; width:550px; height:600px; margin-right: auto; margin-left: auto;"/>
 
 
-The model demonstrates an ability to predict future values. With the appropriate sleep data collection per user, there is a chance a RNN may help in determining if a user will go into light or deep sleep. Doing so will enable the ability to wake an individual at the most optimal time during the time window.
+The Deep Learning model demonstrates an ability to predict future values. With the appropriate sleep data per user, there is a chance a RNN may help in determining if a user will go into light or deep sleep. Doing so will enable the ability to wake an individual at the most optimal time during the time window. It was noticed that only one channel, with respect to a ground and reference electrode, was needed to determine sleep depth; however, a final suggestion is for the utilization of one additional channel to be used as an electrooculography (EOG) for the detection of Rapid Eye Movement (REM). Along with Slow Wave Sleep (SWS), REM is also considered to be an unfavorable sleep stage to wake up on, but it is difficult to detect based on the methods used. This stage is best detected via measuring the corneo-retinal standing potential that exists between the front and the back of the human eye. None of the channels on the mobile EEG is in a position optimally capable of detecting such sleep pattern in real time, and for this reason, an EOG will be needed. In conclusion, the device works against sleep inertia by avoiding SWS effectively.
 
 
 ---
