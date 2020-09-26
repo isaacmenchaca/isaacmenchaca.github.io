@@ -1,9 +1,9 @@
 ---
 layout: post # if this were a page, you would write "page" instead. They layouts are subtly different. Try it to see what happens.
 # set methods to true so it goes to methods section, otherwise if just to project section set to false
-methods: false
+methods: true
 title:  "Senior Capstone Project: Wake Right App (2019)"
-subtitle: "Neural Alarm Clock -- Part 1. Implementation Analysis"
+subtitle: "Neural Alarm Clock - Implementation Analysis and Future Direction"
 date:   2020-09-13 12:45:13 -0400
 author:  # you can get rid of this entire line in your own blog posts, and the page will display the name of the site's owner, taken from the _config.yml file.
 background: '/img/posts/06.jpg' # notice how the image referenced is in your project's /img/posts/ folder.
@@ -61,6 +61,47 @@ We are able to see the changes of magnitude of delta power over time. The log-tr
 <img src="/img/posts/post5images/WR1image6.png" style="display: block; width:550px; height:350px; margin-right: auto; margin-left: auto;"/>
 
 The log-transform of the delta power magnitude enhanced our view of a sleep depth cycle. Having this information we can now use it to determine the design implementation of when to wake an individual on the application.
+
+
+---
+####  Real-Time Functionality
+
+On the application, the app will allow the user to enter a time window of when they will like to be awakened. A time window of at least 30 minutes is required to determine when to wake the individual. If the system was not able to make a decision, which is determined by a threshold, it will wake the individual at the last second of the time window.
+
+Taking the rolling mean was only for the purpose of enhancing the view of the sleep depth changing over time. The power data in real-time retrieval did not start until there was enough points to undergo the first FFT. There was no zero padding or boundary extension in the application. We also took the absolute value of the log-transform so it is on a positive scale. In real-time, a threshold is used to distinguish the sleep depth. Above the threshold will be when to wake an individual and below the threshold will be when to not wake an individual. Since there is no rolling mean in the app, the wake decision is by majority power vote for every 5 minutes. If more power points are below the threshold for the majority of 5 minutes, the person will not be disturbed. Otherwise, the alarm will ring. The threshold shall not be relevant for the wake decision until the desired time window is reached.
+
+The threshold will be an average from the top 50 and lowest 50 values to bypass real-time artifact influence. These values are collected from the data prior to the sleep window. There is a UI slider on the app to indicate how conservative or liberal the user wants the system to be in making a wake decision during the alarm window. Leaning towards conservative means making the threshold higher; this decision will ensure a user is awakened during light sleep, but it also carries the risk of making the decision at the last second of the time window if the threshold was not met. Leaning towards a liberal system makes the threshold lower, and a highly liberal system will risk possibly being awakened during SWS (Deep Sleep) during the time window.
+
+An example of the described system is as below, in rolling mean analysis form and in real-time form, respectively.
+
+<script src="https://gist.github.com/isaacmenchaca/15dc374f467017aeb52a9cdecb20ad80.js"></script>
+<img src="/img/posts/post5images/WR1image7.png" style="display: block; width:550px; height:350px; margin-right: auto; margin-left: auto;"/>
+
+
+---
+#### Future Directions Ideas:
+
+Along with the threshold, there should be an attempt to predict future values to find the most optimal time to wake up during the sleep window. This will also allow the system to make the decision to wake someone earlier rather than later if necessary. A suggested way to do this is with a Deep Learning model with a Recurrent Neural Network (RNN) architecture. A time series is input into the model, and in return a series of predicted future values will be the output. The downside is it may require many sleep trials for a single user to train the model, as sleep cycles are different per person, but if done correctly it can be effective in avoiding sleep inerta/ morning grogginess.
+
+This idea was experimented with generated time-series data. This function, as well as others, can be found in the same ipython notebook. The following demonstrates the architecture built with corresponding input and connections.
+
+<script src="https://gist.github.com/isaacmenchaca/be80341802bbfcb21eb3c2de9bfcf2e0.js"></script>
+<img src="/img/posts/post5images/WR1image8.png" style="display: block; width:300px; height:200px; margin-right: auto; margin-left: auto;"/>
+<img src="/img/posts/post5images/WR1image9.png" style="display: block; width:200px; height:250px; margin-right: auto; margin-left: auto;"/>
+
+After building the model architecture, it was trained using Adam optimization. The MSE (Mean-Squared Error) loss was used to demonstrate if the model was learning and not overfitting the training data.
+
+<script src="https://gist.github.com/isaacmenchaca/827cbe515f17ae61ce55ae683d6aa17d.js"></script>
+<img src="/img/posts/post5images/WR1image10.png" style="display: block; width:550px; height:200px; margin-right: auto; margin-left: auto;"/>
+
+The model was then evaluated with a generated test dataset. Five instances of 50 data points were fed into the model to predict their next 10 data points. The following demonstrates the predictions in comparison to the actual data points.
+
+<script src="https://gist.github.com/isaacmenchaca/3954dae5e16b928b4681b280035ec6c7.js"></script>
+<img src="/img/posts/post5images/WR1image11.png" style="display: block; width:550px; height:600px; margin-right: auto; margin-left: auto;"/>
+
+
+The model demonstrates an ability to predict future values. With the appropriate sleep data collection per user, there is a chance a RNN may help in determining if a user will go into light or deep sleep. Doing so will enable the ability to wake an individual at the most optimal time during the time window.
+
 
 ---
 

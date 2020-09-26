@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Projects
+title: Posts
+description: Methods and Implementation.
 background: '/img/bg-post.jpg'
 ---
-{% assign custompages = site.posts | where: "methods", false %}
+{% assign custompages = site.posts%}
 
 {% for post in custompages %}
 <article class="post-preview">

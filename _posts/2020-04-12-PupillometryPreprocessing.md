@@ -1,7 +1,7 @@
 ---
 layout: post # if this were a page, you would write "page" instead. They layouts are subtly different. Try it to see what happens.
 # set methods to true so it goes to methods section, otherwise if just to project section set to false
-methods: true
+methods: false
 title:  "Pupillometry Preprocessing"
 subtitle: "Cleaning data to use pupil size as an accurate measure of LC BOLD activity"
 date:   2020-04-12 12:45:13 -0400
